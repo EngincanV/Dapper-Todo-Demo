@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Domain", "DapperTodoDemo.Domain\DapperTodoDemo.Domain.csproj", "{1E93FEA0-623B-4C16-89B5-338B9017E22E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Application", "DapperTodoDemo.Application\DapperTodoDemo.Application.csproj", "{647C663C-8216-43DB-9D28-581F8609AA8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Dapper", "DapperTodoDemo.Dapper\DapperTodoDemo.Dapper.csproj", "{DD990185-DC17-4B32-9D7E-25DE2983F2E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Web", "DapperTodoDemo.Web\DapperTodoDemo.Web.csproj", "{5B3677A4-E9C0-4CC7-910E-40B953520287}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E93FEA0-623B-4C16-89B5-338B9017E22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E93FEA0-623B-4C16-89B5-338B9017E22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E93FEA0-623B-4C16-89B5-338B9017E22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E93FEA0-623B-4C16-89B5-338B9017E22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647C663C-8216-43DB-9D28-581F8609AA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647C663C-8216-43DB-9D28-581F8609AA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647C663C-8216-43DB-9D28-581F8609AA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647C663C-8216-43DB-9D28-581F8609AA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
