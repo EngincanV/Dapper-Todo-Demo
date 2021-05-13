@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using DapperTodoDemo.Application;
-using DapperTodoDemo.Domain.Repository;
 using DapperTodoDemo.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -35,8 +29,7 @@ namespace DapperTodoDemo.Web
             });
             services.AddSingleton(config.CreateMapper());
 
-            //TODO: composition root?
-            services.AddTransient<ITodoItemRepository, TodoItemRepository>();
+            services.AddDapper();  //TODO: composition root? it must not depend on infrastructure layer
             services.AddTransient<ITodoAppService, TodoItemAppService>();
         }
 
@@ -49,7 +42,6 @@ namespace DapperTodoDemo.Web
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -60,7 +52,13 @@ namespace DapperTodoDemo.Web
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages(); 
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}");
+            });
         }
     }
 }

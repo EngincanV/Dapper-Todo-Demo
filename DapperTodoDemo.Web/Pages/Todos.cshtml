@@ -1,4 +1,15 @@
 ﻿@page
+@using DapperTodoDemo.Web.Models
+@using DapperTodoDemo.Application
 @model DapperTodoDemo.Web.Pages.Todos
 
+@section Scripts
+{
+    <script src="~/js/Todo.js"></script>
+}
 
+<div class="container">
+    <h1 class="display-1 text-center">Todos</h1>
+
+    @await Html.PartialAsync("_Todo", new TodoViewModel { TodoItems = Model.TodoItems })
+</div>

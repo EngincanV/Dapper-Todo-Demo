@@ -23,7 +23,7 @@ namespace DapperTodoDemo.Infrastructure
         public async Task<TodoItem> GetAsync(Guid id)
         {
             await using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryFirstAsync<TodoItem>($"SELECT * FROM dbo.TodoItems WHERE = {id}");
+            return await connection.QueryFirstAsync<TodoItem>($"SELECT * FROM dbo.TodoItems WHERE = '{id}'");
         }
 
         public async Task<TodoItem> InsertAsync(TodoItem todoItem)
@@ -37,14 +37,14 @@ namespace DapperTodoDemo.Infrastructure
         public async Task<TodoItem> UpdateAsync(Guid id, TodoItem todoItem)
         {
             await using var connection = new SqlConnection(_connectionString);
-            await connection.ExecuteAsync($"UPDATE dbo.TodoItems SET {nameof(TodoItem.Title)} = {todoItem.Title}, {nameof(TodoItem.Description)} = {todoItem.Description}, {nameof(TodoItem.Status)} = {todoItem.Status} WHERE Id = {id}");
+            await connection.ExecuteAsync($"UPDATE dbo.TodoItems SET {nameof(TodoItem.Title)} = '{todoItem.Title}', {nameof(TodoItem.Description)} = '{todoItem.Description}', {nameof(TodoItem.Status)} = {(int)todoItem.Status} WHERE Id = '{id}'");
             return todoItem;
         }
 
         public async Task DeleteAsync(Guid id)
         {
             await using var connection = new SqlConnection(_connectionString);
-            await connection.ExecuteAsync($"DELETE FROM dbo.TodoItems WHERE Id = {id}");
+            await connection.ExecuteAsync($"DELETE FROM dbo.TodoItems WHERE Id = '{id}'");
         }
     }
 }

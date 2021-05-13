@@ -9,4 +9,8 @@
       <ProjectReference Include="..\DapperTodoDemo.Infrastructure\DapperTodoDemo.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\js\Todo.js" />
+    </ItemGroup>
+
 </Project>
