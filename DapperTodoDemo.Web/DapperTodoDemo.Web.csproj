@@ -4,4 +4,9 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DapperTodoDemo.Application\DapperTodoDemo.Application.csproj" />
+      <ProjectReference Include="..\DapperTodoDemo.Infrastructure\DapperTodoDemo.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

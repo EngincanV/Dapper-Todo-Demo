@@ -2,10 +2,11 @@
 
 namespace DapperTodoDemo.Web.Pages
 {
-    public class IndexModel : PageModel
+    public class Todos : PageModel
     {
         public void OnGet()
         {
+            
         }
     }
 }

@@ -4,9 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Domain", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Application", "DapperTodoDemo.Application\DapperTodoDemo.Application.csproj", "{647C663C-8216-43DB-9D28-581F8609AA8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Dapper", "DapperTodoDemo.Dapper\DapperTodoDemo.Dapper.csproj", "{DD990185-DC17-4B32-9D7E-25DE2983F2E2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Web", "DapperTodoDemo.Web\DapperTodoDemo.Web.csproj", "{5B3677A4-E9C0-4CC7-910E-40B953520287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperTodoDemo.Infrastructure", "DapperTodoDemo.Infrastructure\DapperTodoDemo.Infrastructure.csproj", "{F2256ADC-130F-42E4-98C0-94B68F2AE1A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,13 +22,13 @@ Global
 		{647C663C-8216-43DB-9D28-581F8609AA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{647C663C-8216-43DB-9D28-581F8609AA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{647C663C-8216-43DB-9D28-581F8609AA8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD990185-DC17-4B32-9D7E-25DE2983F2E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B3677A4-E9C0-4CC7-910E-40B953520287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2256ADC-130F-42E4-98C0-94B68F2AE1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2256ADC-130F-42E4-98C0-94B68F2AE1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2256ADC-130F-42E4-98C0-94B68F2AE1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2256ADC-130F-42E4-98C0-94B68F2AE1A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
