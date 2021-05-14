@@ -21,23 +21,23 @@ namespace DapperTodoDemo.Web.Areas.DapperTodoDemo.Controllers
         [HttpPost("create")]
         public async Task<PartialViewResult> CreateAsync(string title, string description)
         {
-            await _todoAppService.CreateAsync(new CreateUpdateTodoItemDto { Title = title, Description = description, Status = TodoStatus.Opened});
+            await _todoAppService.CreateAsync(new CreateUpdateTodoItemDto { Title = title, Description = description });
             var todoItems = await _todoAppService.GetTodosAsync();
             
             return PartialView("~/Pages/_Todo.cshtml", new TodoViewModel { TodoItems = todoItems });
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public async Task<PartialViewResult> UpdateAsync(Guid id, string title, string description, bool status)
         {
-            await _todoAppService.UpdateAsync(id, new CreateUpdateTodoItemDto { Title = title, Description = description, Status = status ? TodoStatus.Opened : TodoStatus.Closed });
+            await _todoAppService.UpdateAsync(id, new CreateUpdateTodoItemDto { Title = title, Description = description, Status = !status ? TodoStatus.Opened : TodoStatus.Closed });
             var todoItems = await _todoAppService.GetTodosAsync();
             
             return PartialView("~/Pages/_Todo.cshtml", new TodoViewModel { TodoItems = todoItems });
         }
 
-        [HttpPost("delete")]
-        public async Task<PartialViewResult> DeleteAsync(Guid id)
+        [HttpDelete("delete")]
+        public async Task<PartialViewResult> DeleteAsync([FromQuery]Guid id)
         {
             await _todoAppService.DeleteAsync(id);
             var todoItems = await _todoAppService.GetTodosAsync();

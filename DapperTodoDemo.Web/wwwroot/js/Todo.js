@@ -45,18 +45,18 @@
             //edit
             container.on("submit", "#todo-edit-modal", function (e) {
                 e.preventDefault();
-
+                
                 var data = {
                     id: $("input[name='id']").val(),
                     title: $("input[name='title']").val(),
                     description: $("input[name='description']").val(),
-                    status: parseInt($("input[name='status']").val())
+                    status: $("input[name='status']").is(":checked")
                 };
 
                 $("#todo-edit-modal").modal("hide");
 
                 $.ajax({
-                    type: 'POST',
+                    type: 'PUT',
                     url: `/TodoItem/Update`,
                     data: data,
                     success: function (result) {
@@ -74,9 +74,8 @@
                 var id = $(this).data("todo-id");
 
                 $.ajax({
-                    type: 'POST',
-                    url: `/TodoItem/Delete`,
-                    data: {id: id},
+                    type: 'DELETE',
+                    url: `/TodoItem/Delete?Id=` + id,
                     success: function (result) {
                         var $newContainer = $(result);
                         console.log($newContainer);

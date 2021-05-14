@@ -13,7 +13,7 @@ namespace DapperTodoDemo.Application
         [Required]
         [NotNull]
         public string Description { get; set; }
-        
+
         public TodoStatus Status { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿@model DapperTodoDemo.Web.Models.TodoViewModel
+﻿@using DapperTodoDemo.Domain
+@model DapperTodoDemo.Web.Models.TodoViewModel
 
 <div id="todo-container">
     <button class="btn btn-info float-right m-auto" id="create-todo" style="display: block">Add new todo</button>
@@ -10,7 +11,7 @@
             {
                 <li class="list-group-item">
                     <div class="row justify-content-between m-auto">
-                        <div>
+                        <div style="text-decoration: @(todoItem.Status == TodoStatus.Closed ? "line-through" : "none")">
                             @todoItem.Title
                         </div>
                         <div>
@@ -41,11 +42,11 @@
                         <input type="hidden" id="edit-todo-id" name="id"/>
                         <div class="form-group">
                             <label for="Title">Title: </label>
-                            <input type="text" name="title" class="form-control"/>
+                            <input type="text" name="title" class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="Description">Description: </label>
-                            <input type="text" name="description" class="form-control"/>
+                            <input type="text" name="description" class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status: </label>
@@ -74,15 +75,11 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="Title">Title: </label>
-                            <input type="text" name="title" class="form-control"/>
+                            <input type="text" name="title" class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="Description">Description: </label>
-                            <input type="text" name="description" class="form-control"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="Status">Status: </label>
-                            <input type="checkbox" name="status"/>
+                            <input type="text" name="description" class="form-control" required/>
                         </div>
                     </div>
                     <div class="modal-footer">
