@@ -5,7 +5,7 @@ using DapperTodoDemo.Domain;
 
 namespace DapperTodoDemo.Application
 {
-    public interface ITodoAppService
+    public interface ITodoItemAppService
     {
         Task<List<TodoItemDto>> GetTodosAsync();
 

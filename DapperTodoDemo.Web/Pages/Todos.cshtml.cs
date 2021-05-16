@@ -9,16 +9,16 @@ namespace DapperTodoDemo.Web.Pages
     {
         public List<TodoItemDto> TodoItems { get; set; }
         
-        private readonly ITodoAppService _todoAppService;
+        private readonly ITodoItemAppService _todoItemAppService;
 
-        public Todos(ITodoAppService todoAppService)
+        public Todos(ITodoItemAppService todoItemAppService)
         {
-            _todoAppService = todoAppService;
+            _todoItemAppService = todoItemAppService;
         }
 
         public async Task OnGetAsync()
         {
-            TodoItems = await _todoAppService.GetTodosAsync();
+            TodoItems = await _todoItemAppService.GetTodosAsync();
         }
     }
 }

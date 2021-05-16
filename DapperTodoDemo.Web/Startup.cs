@@ -1,3 +1,4 @@
+using Autofac;
 using AutoMapper;
 using DapperTodoDemo.Application;
 using DapperTodoDemo.Infrastructure;
@@ -17,20 +18,25 @@ namespace DapperTodoDemo.Web
         }
 
         public IConfiguration Configuration { get; }
+        
+        public ILifetimeScope AutofacContainer { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
+            
             //AutoMapper registration
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<TodoItemAutoMapperProfile>();
             });
             services.AddSingleton(config.CreateMapper());
+        }
 
-            services.AddDapper();  //TODO: composition root? it must not depend on infrastructure layer
-            services.AddTransient<ITodoAppService, TodoItemAppService>();
+        //runs after ConfigureServices
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new DapperTodoDemoApplicationModule());
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

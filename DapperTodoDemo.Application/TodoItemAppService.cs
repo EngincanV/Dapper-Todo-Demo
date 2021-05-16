@@ -7,7 +7,7 @@ using DapperTodoDemo.Domain.Repository;
 
 namespace DapperTodoDemo.Application
 {
-    public class TodoItemAppService : ITodoAppService
+    public class TodoItemAppService : ITodoItemAppService
     {
         private readonly ITodoItemRepository _todoItemRepository;
         private readonly IMapper _mapper;
